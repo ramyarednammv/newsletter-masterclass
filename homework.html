@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your homework — The Signature Engine</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#14161a;--ink-soft:#4d5462;--ink-faint:#868e9e;--line:#e5e8ed;--bg:#fff;--bg-soft:#f7f8fa;
+        --accent:#b93d0c;--accent-soft:#fff4ef;--accent-line:#f4d3c3;--green:#0d7355;--green-soft:#eff8f4;--green-line:#cfe8de}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);
+       -webkit-font-smoothing:antialiased;line-height:1.55}
+  .wrap{max-width:820px;margin:0 auto;padding:3.5rem 1.4rem 6rem}
+  .top{border-bottom:1px solid var(--line);padding-bottom:1.6rem;margin-bottom:2.4rem}
+  .eyebrow{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:.7rem}
+  h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,2.9rem);line-height:1.06;letter-spacing:-.02em}
+  h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.35rem,3.2vw,1.85rem);line-height:1.15;margin:2.8rem 0 .9rem;letter-spacing:-.01em}
+  h3{font-size:1.02rem;font-weight:600;margin:1.5rem 0 .5rem}
+  p{color:var(--ink-soft);font-size:1rem}
+  p+p{margin-top:.8rem}
+  .lede{font-size:1.12rem;color:var(--ink);margin-top:.9rem}
+  strong{color:var(--ink);font-weight:600}
+  a{color:var(--accent)}
+  ul,ol{margin:.9rem 0 0 0;padding-left:1.3rem}
+  li{color:var(--ink-soft);margin-bottom:.5rem;font-size:.99rem}
+  .nav{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem}
+  .nav a{display:inline-block;font-size:.86rem;font-weight:600;text-decoration:none;padding:.5rem 1rem;
+         border:1px solid var(--line);border-radius:999px;color:var(--ink);background:var(--bg-soft)}
+  .nav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .step{border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;margin-top:1rem;background:var(--bg-soft)}
+  .step .n{display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;
+           background:var(--accent);color:#fff;font-size:.78rem;font-weight:700;margin-right:.5rem}
+  .step h3{display:flex;align-items:center;margin:0 0 .5rem}
+  .step .time{margin-left:auto;font-size:.76rem;color:var(--ink-faint);font-weight:500}
+  .out{background:var(--green-soft);border:1px solid var(--green-line);border-radius:12px;padding:1rem 1.2rem;margin-top:.9rem}
+  .out .lab{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--green);margin-bottom:.5rem}
+  .out ul{margin:0;padding-left:1.1rem}
+  .out li{font-size:.93rem;margin-bottom:.35rem;color:var(--ink)}
+  .test{background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin-top:.9rem}
+  .test p{color:var(--ink);font-size:.96rem}
+  .pbox{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:1rem;background:#fff}
+  .pbox header{display:flex;align-items:center;gap:1rem;padding:.75rem 1rem;background:var(--bg-soft);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .pbox header b{font-size:.95rem}
+  .pbox header .t{font-size:.76rem;color:var(--ink-faint);margin-left:auto}
+  .pbox pre{margin:0;padding:1.1rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;
+            line-height:1.62;white-space:pre-wrap;color:var(--ink-soft);max-height:none}
+  button.copy{font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;border:1px solid var(--accent);
+              background:var(--accent);color:#fff;padding:.42rem .95rem;border-radius:8px}
+  button.copy.done{background:var(--green);border-color:var(--green)}
+  .rules{background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:14px;padding:1.2rem 1.4rem;margin-top:1.2rem}
+  .rules li{color:var(--ink)}
+  .gb{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1rem}
+  .gb>div{border-radius:12px;padding:1rem 1.2rem}
+  .gb .g{background:var(--green-soft);border:1px solid var(--green-line)}
+  .gb .b{background:#fdf2f1;border:1px solid #f2d5d3}
+  .gb .lab{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:.5rem}
+  .gb .g .lab{color:var(--green)} .gb .b .lab{color:#a3231d}
+  .gb ul{margin:0;padding-left:1.1rem} .gb li{font-size:.92rem;color:var(--ink)}
+  .foot{margin-top:4rem;padding-top:1.6rem;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-faint)}
+  @media (max-width:620px){.gb{grid-template-columns:1fr}.wrap{padding-top:2.2rem}}
+</style></head><body><div class="wrap">
+<div class="top">
+  <div class="eyebrow">The Signature Engine · Newsletter masterclass</div>
+  <h1>Your homework</h1>
+  <p class="lede">Three prompts, about 75 minutes in total. At the end of it you'll have a full year of newsletter topics and your first four issues written.</p>
+  <div class="nav"><a class="on" href="homework.html">Your homework</a><a href="prompts.html">The 3 prompts</a><a href="index.html">The full deck</a></div>
+</div>
+
+<h2>Before you start — four rules</h2>
+<div class="rules"><ul>
+  <li><strong>Run all three in the same Claude project</strong> you already use for your business — not a fresh chat. That way it can see your Brand OS and your Business OS, and each prompt remembers the last one.</li>
+  <li><strong>Do them in order.</strong> Prompt 2 needs Prompt 1's answers. Prompt 3 needs Prompt 2's.</li>
+  <li><strong>Use Fable 5 or Opus.</strong> This is thinking work, not looking things up. Prompt 2 also needs web access for its research part.</li>
+  <li><strong>Answer like you're on the phone.</strong> Messy is fine — better, actually. If a question is hard it'll give you A, B, C, D options and you can just reply with a letter.</li>
+</ul></div>
+
+<h2>The one thing that decides whether this works</h2>
+<p>Prompt 2 and Prompt 3 will both ask you for real stories out of your business. This is where most people go vague and get a brochure back.</p>
+<div class="gb">
+  <div class="g"><div class="lab">Give it this</div><ul>
+    <li>"A Tuesday in February. A £4,200 quote I was sure I'd lost."</li>
+    <li>What someone actually said, in their words</li>
+    <li>One real number — a price, a count, a date</li>
+    <li>The bit where you got it wrong first</li>
+  </ul></div>
+  <div class="b"><div class="lab">Not this</div><ul>
+    <li>"We deliver great results for our clients"</li>
+    <li>"Transformational outcomes"</li>
+    <li>A summary of what usually happens</li>
+    <li>A client's name or anything identifying</li>
+  </ul></div>
+</div>
+<p style="margin-top:1rem"><strong>Easiest way to do it:</strong> go for a walk, open the Claude app, and talk for three minutes. Paste the transcript in unedited. Don't tidy it — the mess is where the good line is.</p>
+
+<h2>The three prompts, and what each gives you</h2>
+
+<div class="step">
+  <h3><span class="n">1</span> Positioning <span class="time">~15 min</span></h3>
+  <p>Claude acts as a world-class positioning strategist trained in the methods of April Dunford, Al Ries &amp; Jack Trout, Andy Raskin and Chris Do. It asks you eight questions, one at a time, then reviews its own answer through all four of those lenses before it shows you anything.</p>
+  <div class="out"><div class="lab">What comes back</div><ul>
+    <li><strong>Your position</strong> — one sentence: what you believe that others in your industry don't</li>
+    <li><strong>The word you own</strong> — the one word you want to be first for</li>
+    <li><strong>What you're against</strong> — the habit in your industry you're arguing with</li>
+    <li><strong>Your four pillars</strong> — the four themes you'll be known for, each marked AUTHORITY or AFFINITY</li>
+  </ul></div>
+  <div class="test"><p><strong>You'll know it worked when</strong> you read your position out loud to someone in your industry and they say <em>"well, hang on…"</em>. If they just nod, it's too safe — tell Claude to sharpen it.</p></div>
+</div>
+
+<div class="step">
+  <h3><span class="n">2</span> My newsletter strategy <span class="time">~40 min · the big one</span></h3>
+  <p>Five parts, deliberately in this order: the decisions → <strong>your story bank</strong> → research → a full year of topics → your first four issues. It collects your real stories <em>before</em> it invents any topic, so the year gets built around material you actually have.</p>
+  <div class="out"><div class="lab">What comes back</div><ul>
+    <li><strong>The decisions settled</strong> — founder or company, long or short form, your cadence and day, the name, who it's for, your promise, the shape with word counts</li>
+    <li><strong>Your story bank</strong> — twelve real stories out of your business, three per pillar</li>
+    <li><strong>A research summary</strong> — what your readers are actually asking this year, what's changed in your industry, what's worth arguing with</li>
+    <li><strong>Twelve months of topics</strong> — 52 if you chose weekly, 26 fortnightly, 12 monthly. Dated, sequenced, with your stories attached</li>
+    <li><strong>Your first four issues</strong> — one from each pillar, each with a real story against it</li>
+  </ul></div>
+  <div class="test"><p><strong>You'll know it worked when</strong> all four of your first issues have a story number against them. If any say <em>"needs a story"</em>, it hasn't finished — tell it to pick different ones.</p></div>
+</div>
+
+<div class="step">
+  <h3><span class="n">3</span> Write &amp; check <span class="time">~20 min</span></h3>
+  <p>Claude acts as a world-class email copywriter trained in the methods of Eugene Schwartz, Gary Bencivenga, Joseph Sugarman, Ben Settle, William Zinsser and Ann Handley. It writes all four issues, checks its own work silently, then asks which one you want to send first.</p>
+  <div class="out"><div class="lab">What comes back</div><ul>
+    <li><strong>Four complete newsletters</strong> — one from each pillar, each with its subject line, preheader and full body, ready to paste into Kit</li>
+    <li><strong>A list of what's missing</strong> — every gap, and every <code>[HUMAN: …]</code> marker where your own joke or aside goes. Filling those in is your job and takes a minute each</li>
+    <li><strong>Then it asks you one thing</strong> — which of the four do you want to send first? Say the number and it hands that one back clean</li>
+  </ul></div>
+  <div class="test"><p><strong>You'll know it worked when</strong> you can read issue one out loud and it sounds like you. <strong>And that's the homework done.</strong></p></div>
+</div>
+
+<h2>Bring these to the next session</h2>
+<ol>
+  <li><strong>Your position and your four pillars</strong> — saved somewhere you'll find them again</li>
+  <li><strong>Your newsletter strategy, story bank and year plan</strong></li>
+  <li><strong>Your four issues, written</strong> — bring the drafts, don't send them yet</li>
+  <li><strong>A Kit account</strong> — nothing built, just the account, and your trial end date in the diary. <a href="https://partners.kit.com/vkoxtfjqkrwy">partners.kit.com/vkoxtfjqkrwy</a></li>
+</ol>
+
+<h2>One last thing</h2>
+<p>This is not overnight work. It took two years to build the engine behind a three-million-subscriber list — not two years of learning to write, but two years of showing up every week and testing hard.</p>
+<p>Your first ten issues will be your worst ten. Send them anyway. Nothing compounds in month one; it compounds in month nine, and then it doesn't stop. <strong>The people who win at this aren't the best writers — they're the ones still sending in eighteen months.</strong></p>
+
+<div class="foot">The Signature Engine · newsletter masterclass · Ramya Rednam<br><a href="prompts.html">Open the three prompts →</a></div>
+</div></body></html>
