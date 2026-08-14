@@ -58,40 +58,37 @@
   .foot{margin-top:4rem;padding-top:1.6rem;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-faint)}
   @media (max-width:620px){.gb{grid-template-columns:1fr}.wrap{padding-top:2.2rem}}
 
-  .ck{list-style:none;padding:0;margin:.8rem 0 0}
-  .ck li{display:flex;gap:.7rem;align-items:flex-start;padding:.55rem 0;border-bottom:1px solid var(--line);margin:0}
+  .ck{list-style:none;padding:0;margin:.6rem 0 0}
+  .ck li{display:flex;gap:.8rem;align-items:flex-start;padding:.7rem 0;border-bottom:1px solid var(--line);margin:0}
   .ck li:last-child{border-bottom:none}
-  .ck input{appearance:none;-webkit-appearance:none;flex:none;width:1.15rem;height:1.15rem;margin-top:.2rem;
-            border:1.5px solid var(--ink-faint);border-radius:5px;cursor:pointer;position:relative;background:#fff}
+  .ck input{appearance:none;-webkit-appearance:none;flex:none;width:1.3rem;height:1.3rem;margin-top:.1rem;
+            border:1.5px solid var(--ink-faint);border-radius:6px;cursor:pointer;position:relative;background:#fff}
   .ck input:checked{background:var(--green);border-color:var(--green)}
-  .ck input:checked::after{content:'\2713';position:absolute;inset:0;color:#fff;font-size:.78rem;font-weight:700;
+  .ck input:checked::after{content:'\2713';position:absolute;inset:0;color:#fff;font-size:.85rem;font-weight:700;
             display:flex;align-items:center;justify-content:center}
-  .ck label{cursor:pointer;font-size:.99rem;color:var(--ink-soft);line-height:1.5}
-  .ck input:checked + label{opacity:.45}
-  .ck input:checked + label b{color:var(--ink-soft)}
-  .ck label b{color:var(--ink)}
-  .ck label .why{display:block;font-size:.86rem;color:var(--ink-faint);margin-top:.15rem}
-  .part{border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;margin-top:1.1rem;background:#fff}
+  .ck label{cursor:pointer;font-size:1.04rem;color:var(--ink);line-height:1.45;font-weight:500}
+  .ck input:checked + label{opacity:.4}
+  .ck label .why{display:block;font-size:.9rem;color:var(--ink-faint);margin-top:.2rem;font-weight:400}
+  .part{border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem 1.2rem;margin-top:1rem;background:#fff}
   .part.done{background:var(--green-soft);border-color:var(--green-line)}
-  .part h3{margin:0;display:flex;align-items:baseline;gap:.55rem;font-size:1.06rem}
-  .part h3 .n{display:inline-flex;align-items:center;justify-content:center;width:1.55rem;height:1.55rem;border-radius:50%;
-              background:var(--accent);color:#fff;font-size:.76rem;font-weight:700;flex:none}
-  .part h3 .cnt{margin-left:auto;font-size:.76rem;color:var(--ink-faint);font-weight:500;white-space:nowrap}
-  .hw{background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:14px;padding:1.2rem 1.4rem;margin-top:1.1rem}
-  .hw h3{margin-top:0}
-  .hw .ck label{color:var(--ink)}
-  .reset{margin-top:2rem;font-size:.82rem;color:var(--ink-faint)}
+  .part h3{margin:0 0 .2rem;display:flex;align-items:baseline;gap:.6rem;font-size:1.08rem}
+  .part h3 .n{display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;
+              background:var(--accent);color:#fff;font-size:.78rem;font-weight:700;flex:none}
+  .part h3 .cnt{margin-left:auto;font-size:.78rem;color:var(--ink-faint);font-weight:500;white-space:nowrap}
+  .reset{margin-top:2.2rem;font-size:.82rem;color:var(--ink-faint)}
   .reset button{font-family:inherit;font-size:.8rem;cursor:pointer;background:none;border:1px solid var(--line);
                 border-radius:7px;padding:.35rem .7rem;color:var(--ink-soft)}
-  .pbar{position:sticky;top:0;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line);
-       padding:.7rem 0 .8rem;margin-bottom:1.2rem;z-index:5;font-size:.86rem;font-weight:600;color:var(--ink)}
-  .pbar .track{height:5px;background:var(--bg-soft);border-radius:99px;margin-top:.45rem;overflow:hidden}
+  .pbar{padding:.2rem 0 1.2rem;font-size:.88rem;font-weight:600;color:var(--ink)}
+  .pbar .track{height:6px;background:var(--bg-soft);border-radius:99px;margin-top:.5rem;overflow:hidden}
   .pbar .fill{height:100%;background:var(--green);width:0;transition:width .25s;border-radius:99px}
+  .help{background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:14px;padding:1.1rem 1.3rem;margin-top:2rem}
+  .help h3{margin:0 0 .5rem;font-size:1.02rem}
+  .help p{color:var(--ink);font-size:.97rem}
 </style></head><body><div class="wrap">
 <div class="top">
   <div class="eyebrow">The Signature Engine · Newsletter masterclass</div>
   <h1>Your checklist</h1>
-  <p class="lede">Everything from the last two sessions in one place, in order. Tick as you go — it saves on this device, so you can close the tab and come back to it.</p>
+  <p class="lede">Eleven things. Tick as you go — it saves on this device, so you can close the tab and come back.</p>
   <div class="nav">
     <a class="on" href="checklist.html">Checklist</a>
     <a href="homework.html">The homework</a>
@@ -102,94 +99,45 @@
 
 <div class="pbar">Progress <span id="pct">0%</span><div class="track"><div class="fill" id="fill"></div></div></div>
 
-<h2>Before you start</h2>
-<p>Have three things open: <strong>the Claude project you use for your business</strong>, <strong>Kit</strong>, and <strong>your own inbox</strong>. That's it.</p>
-
-<h2>Part 1 — The three prompts</h2>
-<p>Skip this if you've already done them. If not, do them <strong>in order, in the same Claude project</strong> — each one feeds the next. <a href="prompts.html">The prompts are here.</a></p>
 <div class="part">
-  <h3><span class="n">1</span> Run the prompts <span class="cnt"></span></h3>
+  <h3><span class="n">1</span> Write your four newsletters <span class="cnt"></span></h3>
+  <p style="font-size:.9rem;margin:0">In order, in the same Claude project. <a href='prompts.html'>The prompts are here.</a></p>
   <ul class="ck">
-    <li><input type="checkbox"><label><b>Prompt 1 — Positioning.</b> I have my position, the word I own, what I'm against, and my four pillars<span class="why">About 15 minutes. Use Fable 5 or Opus.</span></label></li>
-    <li><input type="checkbox"><label><b>Prompt 2 — My newsletter strategy.</b> I have my name, promise, shape, cadence, twelve stories, a full year of topics and my first four issues<span class="why">About 40 minutes. This is the big one — the twelve stories are the work.</span></label></li>
-    <li><input type="checkbox"><label><b>Prompt 3 — Write &amp; check.</b> I have four newsletters written, one from each pillar<span class="why">About 20 minutes.</span></label></li>
-    <li><input type="checkbox"><label>I've filled in every <code>[HUMAN: …]</code> marker<span class="why">That's where your joke or aside goes. Claude leaves it blank on purpose — it can't do your humour.</span></label></li>
-    <li><input type="checkbox"><label>I've filled in every gap it flagged<span class="why">Usually a number or a detail it needed and refused to invent.</span></label></li>
+    <li><input type="checkbox"><label>Run <b>Prompt 1</b> — positioning and your four pillars<span class="why">15 minutes</span></label></li>
+    <li><input type="checkbox"><label>Run <b>Prompt 2</b> — your strategy and a year of topics<span class="why">40 minutes. The longest one</span></label></li>
+    <li><input type="checkbox"><label>Run <b>Prompt 3</b> — it writes your four newsletters<span class="why">20 minutes</span></label></li>
+    <li><input type="checkbox"><label>Fill in the <b>[HUMAN]</b> bits, then read each one out loud<span class="why">That's where your joke or aside goes. Anything you stumble over reading aloud, cut it</span></label></li>
   </ul>
 </div>
 
-<h2>Part 2 — Your first four editions</h2>
-<p>A few quick passes on each. Ten minutes for all four, and it's the difference between sending something and sending something good.</p>
 <div class="part">
-  <h3><span class="n">2</span> Check the four editions <span class="cnt"></span></h3>
+  <h3><span class="n">2</span> Set up Kit <span class="cnt"></span></h3>
+  <p style="font-size:.9rem;margin:0">What we did together on the call.</p>
   <ul class="ck">
-    <li><input type="checkbox"><label><b>Read each one out loud.</b> Anything I stumbled over, I cut<span class="why">This is the whole edit, honestly.</span></label></li>
-    <li><input type="checkbox"><label>Each one has at least <b>one specific detail</b> — a price, a date, a measurement, something someone actually said</label></li>
-    <li><input type="checkbox"><label>Each one has <b>exactly one ask</b><span class="why">Two asks means none.</span></label></li>
-    <li><input type="checkbox"><label>Every subject line is <b>under 55 characters, no colon</b>, and specific rather than mysterious</label></li>
-    <li><input type="checkbox"><label>Every preheader is a <b>different second sentence</b>, not a repeat of the subject</label></li>
-    <li><input type="checkbox"><label><b>Nothing is invented.</b> Every number, quote and client came from me<span class="why">If Claude added anything I didn't give it, take it out.</span></label></li>
-    <li><input type="checkbox"><label>I've <b>picked which one goes out first</b></label></li>
-    <li><input type="checkbox"><label>All four are <b>saved somewhere I'll find them again</b><span class="why">Your Claude project is fine. So is a doc.</span></label></li>
+    <li><input type="checkbox"><label><b>Sender details</b> — your own name in the from field, and a physical address<span class="why">Kit needs the address by law. A business address is fine. Do this first or sends fail later</span></label></li>
+    <li><input type="checkbox"><label><b>Add yourself as a subscriber</b><span class="why">So you get your own newsletter exactly like your readers do</span></label></li>
+    <li><input type="checkbox"><label><b>Paste edition one in</b> and fix the spacing<span class="why">Pasting from Claude always breaks the spacing. Normal, not broken</span></label></li>
   </ul>
 </div>
 
-<h2>Part 3 — Kit setup</h2>
-<p>This is what we did together on the call. Work through it and make sure nothing got missed.</p>
 <div class="part">
-  <h3><span class="n">3</span> Set up Kit properly <span class="cnt"></span></h3>
+  <h3><span class="n">3</span> This week, before Thursday <span class="cnt"></span></h3>
+  <p style="font-size:.9rem;margin:0">Four things.</p>
   <ul class="ck">
-    <li><input type="checkbox"><label>Account created, and <b>my trial end date is in my diary</b><span class="why">So the bill isn't a surprise.</span></label></li>
-    <li><input type="checkbox"><label><b>Sender details done</b> — from name, from address, and a physical mailing address<span class="why">Kit needs the address by law. A business address is fine. Do this before anything else or sends fail later.</span></label></li>
-    <li><input type="checkbox"><label>My <b>from name is a person</b>, not just the company name<span class="why">People open people. This matters more than your subject line.</span></label></li>
-    <li><input type="checkbox"><label><b>One list. No tags, no segments yet</b><span class="why">Keep it simple. Segmenting comes later.</span></label></li>
-    <li><input type="checkbox"><label><b>Plainest template</b> chosen<span class="why">Text-heavy beats designed. It looks like a person wrote it, and it lands in the inbox better.</span></label></li>
-    <li><input type="checkbox"><label><b>I've added myself as a subscriber</b><span class="why">So you receive your own newsletter exactly the way your readers will.</span></label></li>
-    <li><input type="checkbox"><label><b>Edition one pasted in</b> as a one-off email — Kit calls it a Broadcast</label></li>
-    <li><input type="checkbox"><label><b>Spacing fixed after pasting</b><span class="why">Pasting from Claude always breaks the spacing. That's normal, not broken.</span></label></li>
+    <li><input type="checkbox"><label><b>Send it to yourself</b> — then go and check you got it<span class="why">Check spam too. If it landed there, add yourself to your own contacts</span></label></li>
+    <li><input type="checkbox"><label><b>Start uploading your subscribers</b><span class="why">Past clients, enquiries, anyone who's agreed to hear from you. Email and first name is all Kit needs. Never buy a list</span></label></li>
+    <li><input type="checkbox"><label><b>Make a landing page in Kit</b><span class="why">One headline, three lines on what they get and how often, one button. That's the whole page</span></label></li>
+    <li><input type="checkbox"><label><b>Have a proper poke around Kit</b><span class="why">Twenty minutes of clicking. Much less scary once you've had a look</span></label></li>
   </ul>
 </div>
 
-<h2>Part 4 — The test send</h2>
-<p>Send it to yourself and actually check it arrived. Don't skip the spam folder.</p>
-<div class="part">
-  <h3><span class="n">4</span> Test it on yourself <span class="cnt"></span></h3>
-  <ul class="ck">
-    <li><input type="checkbox"><label><b>Sent it to myself</b> as a subscriber</label></li>
-    <li><input type="checkbox"><label><b>It arrived.</b> I checked my inbox <i>and</i> my spam folder<span class="why">If it landed in spam, add yourself to your own contacts — and tell new subscribers to do the same.</span></label></li>
-    <li><input type="checkbox"><label>The <b>from name</b> looks right in my inbox list</label></li>
-    <li><input type="checkbox"><label>The <b>subject and preheader</b> read properly next to each other in the inbox</label></li>
-    <li><input type="checkbox"><label>I <b>opened it on my phone</b>, not just my laptop<span class="why">That's where most of your readers will read it.</span></label></li>
-    <li><input type="checkbox"><label><b>Every link works</b> and goes where I meant it to</label></li>
-    <li><input type="checkbox"><label>No paragraph is <b>longer than three lines</b> on the phone</label></li>
-  </ul>
+<div class="help">
+  <h3>Stuck on something in Kit?</h3>
+  <p><strong>Ask Kit — don't sit on it for a week.</strong> Use the help link inside your Kit dashboard and tell them exactly what you clicked and what happened. Their support is good and this is exactly what they're for.</p>
+  <p style="margin-top:.5rem">Then drop it in the group too — if you've hit it, someone else has.</p>
 </div>
 
-<h2>This week's homework</h2>
-<div class="hw">
-  <h3>This week — four things before Thursday</h3>
-  <ul class="ck">
-    <li><input type="checkbox"><label><b>Send one newsletter as a real test to your own email, and confirm you got it.</b><span class="why">Not a preview — an actual send to yourself as a subscriber. Then go and look for it in your inbox.</span></label></li>
-    <li><input type="checkbox"><label><b>Start uploading your subscribers.</b><span class="why">Anyone who has agreed to hear from you — past clients, enquiries, your contacts. A CSV with email and first name is all Kit needs. Never buy or scrape a list; it wrecks your ability to reach anyone.</span></label></li>
-    <li><input type="checkbox"><label><b>Make a landing page in Kit.</b><span class="why">One headline, three lines on what they get and how often, one button. That's the whole page. Then put the link in your LinkedIn featured section.</span></label></li>
-    <li><input type="checkbox"><label><b>Explore Kit properly.</b><span class="why">Twenty minutes of clicking around. Look at Broadcasts, Subscribers, Forms and Landing Pages. You'll use all four eventually, and it's far less intimidating once you've poked at it.</span></label></li>
-  </ul>
-</div>
-
-<h2>Stuck on something in Kit?</h2>
-<p><strong>Ask Kit directly — don't sit on it for a week.</strong> Their support is good, and answering setup questions is exactly what they're there for. It's almost always faster than waiting for Thursday.</p>
-<ul>
-  <li>Use the <strong>help or support link inside your Kit dashboard</strong> — quickest route, and it already knows which account you're on</li>
-  <li>Search their <strong>help centre</strong> first. Most setup questions are already answered, with screenshots</li>
-  <li>When you ask, <strong>say exactly what you clicked and exactly what happened.</strong> "I clicked send test and nothing arrived" gets a useful answer. "It's not working" doesn't</li>
-  <li><strong>Then drop it in the group as well</strong> — if you hit it, someone else has too</li>
-</ul>
-
-<h2>You're done when…</h2>
-<p>You have <strong>four newsletters written</strong>, <strong>Kit set up</strong>, <strong>one email sent to yourself that you can actually see in your inbox</strong>, <strong>your subscribers going in</strong>, and <strong>a landing page live</strong>.</p>
-<p>That's a working newsletter. Everything from here is just doing it again next week.</p>
-
-<div class="reset">Ticks are saved on this device only. <button id="reset">Clear all ticks</button></div>
+<div class="reset">Ticks save on this device only. <button id="reset">Clear all</button></div>
 
 <div class="foot">The Signature Engine · newsletter masterclass · Ramya Rednam<br><a href="prompts.html">The three prompts →</a></div>
 </div><script>
@@ -199,13 +147,13 @@
   function set(k,v){try{localStorage.setItem(k,v);}catch(e){}}
   boxes.forEach(function(b,i){
     b.id='ck'+i; b.nextElementSibling.setAttribute('for',b.id);
-    if(get('sig-ck-'+i)==='1') b.checked=true;
-    b.addEventListener('change',function(){set('sig-ck-'+i,b.checked?'1':'0');update();});
+    if(get('sig2-'+i)==='1') b.checked=true;
+    b.addEventListener('change',function(){set('sig2-'+i,b.checked?'1':'0');update();});
   });
   function update(){
     var done=boxes.filter(function(b){return b.checked;}).length;
     var pct=boxes.length?Math.round(done/boxes.length*100):0;
-    var el=document.getElementById('pct'); if(el)el.textContent=pct+'% \u2014 '+done+' of '+boxes.length;
+    var el=document.getElementById('pct'); if(el)el.textContent=done+' of '+boxes.length+' done';
     var f=document.getElementById('fill'); if(f)f.style.width=pct+'%';
     [].slice.call(document.querySelectorAll('.part')).forEach(function(p){
       var bs=[].slice.call(p.querySelectorAll('input'));
@@ -215,7 +163,7 @@
     });
   }
   var r=document.getElementById('reset');
-  if(r)r.onclick=function(){boxes.forEach(function(b,i){b.checked=false;set('sig-ck-'+i,'0');});update();};
+  if(r)r.onclick=function(){boxes.forEach(function(b,i){b.checked=false;set('sig2-'+i,'0');});update();};
   update();
 })();
 </script></body></html>
