@@ -57,6 +57,15 @@
   .gb ul{margin:0;padding-left:1.1rem} .gb li{font-size:.92rem;color:var(--ink)}
   .foot{margin-top:4rem;padding-top:1.6rem;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-faint)}
   @media (max-width:620px){.gb{grid-template-columns:1fr}.wrap{padding-top:2.2rem}}
+
+  .dl{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;margin-top:1.1rem}
+  .dl h3{margin:0 0 .4rem;font-size:1.06rem}
+  .dl a.btn{display:inline-block;margin-top:.9rem;background:var(--accent);color:#fff;text-decoration:none;
+            font-weight:600;font-size:.94rem;padding:.6rem 1.2rem;border-radius:9px}
+  .dl a.btn:hover{opacity:.92}
+  .dl .alt{display:block;margin-top:.6rem;font-size:.84rem;color:var(--ink-faint)}
+  .dl ol{margin:.9rem 0 0;padding-left:1.3rem}
+  .dl li{font-size:.95rem}
 </style></head><body><div class="wrap">
 <div class="top">
   <div class="eyebrow">The Signature Engine · Newsletter masterclass</div>
@@ -127,6 +136,23 @@
     <li><strong>Then it asks you one thing</strong> — which of the four do you want to send first? Say the number and it hands that one back clean</li>
   </ul></div>
   <div class="test"><p><strong>You'll know it worked when</strong> you can read issue one out loud and it sounds like you. <strong>And that's the homework done.</strong></p></div>
+</div>
+
+
+<h2>Optional — the whole system as a Claude skill</h2>
+<p>Everything from both sessions is also packaged as a <strong>Claude skill</strong>. Add it once and Claude knows the entire system permanently — the positioning method, the four pillars, the seven story beats, the formats and word counts, the subject-line rules, the metrics, all of it. You then just talk to it normally: <em>"help me write this week's issue"</em>, <em>"why is nobody opening my emails"</em>, <em>"turn this voice note into a newsletter."</em></p>
+
+<div class="dl">
+  <h3>The Signature Engine — Claude skill</h3>
+  <p>Thirteen files, about 20,000 words of the full method. You don't need this to do the homework — the three prompts are enough. This is for afterwards, when you want it permanently on tap.</p>
+  <a class="btn" href="signature-engine.skill" download>Download the skill</a>
+  <span class="alt">If your browser blocks that file, use the <a href="signature-engine.zip" download>.zip version</a> instead.</span>
+  <ol>
+    <li>Download the file above</li>
+    <li>In Claude, go to <strong>Settings → Capabilities → Skills</strong> and choose <strong>Upload skill</strong></li>
+    <li>Upload the file. That's it — Claude will use it automatically whenever you mention your newsletter</li>
+  </ol>
+  <p style="margin-top:.8rem;font-size:.9rem;color:var(--ink-faint)">Skills are available on paid Claude plans. If you don't see the option, use the three prompts instead — they do the same work, you just paste them each time.</p>
 </div>
 
 <h2>Bring these to the next session</h2>
